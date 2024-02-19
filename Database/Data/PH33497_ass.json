@@ -1,0 +1,199 @@
+{
+  "users": [
+    {
+      "id": "43c9",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin"
+    },
+    {
+      "id": "563b",
+      "username": "admin1",
+      "email": "admin1@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin1"
+    },
+    {
+      "id": "e8ab",
+      "username": "admin3",
+      "email": "admin3@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin3"
+    },
+    {
+      "id": "3e43",
+      "username": "admin5",
+      "email": "admin5@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin5"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Táo",
+      "price": 10000,
+      "image": "https://i.imgur.com/8ubkI5C.jpg",
+      "description": "Quả táo là một loại trái cây rất phổ biến và tốt cho sức khỏe. Quả táo có nhiều màu sắc, hình dạng và hương vị khác nhau, từ đỏ đến xanh, từ tròn đến hình bầu dục, từ ngọt đến chua. Quả táo có thể ăn sống hoặc chế biến thành nhiều món ăn ngon, như bánh táo, nước ép táo hay salad táo. Quả táo cũng có nhiều lợi ích cho sức khỏe, như giúp cải thiện tiêu hóa, làm sạch răng miệng và cung cấp vitamin C",
+      "categories": "Trái Cây",
+      "liked": false
+    },
+    {
+      "id": "2",
+      "name": "Chuối",
+      "price": 20000,
+      "image": "https://imgur.com/3C0r4IV.jpg",
+      "description": "Quả chuối là một loại trái cây rất phổ biến và bổ dưỡng. Quả chuối có vị ngọt, mềm và thơm. Quả chuối có thể ăn tươi hoặc chế biến thành nhiều món ăn ngon, như chuối chiên, chuối nếp nướng, chuối hấp, bánh chuối... Quả chuối cũng có nhiều lợi ích cho sức khỏe, như cung cấp năng lượng, chống suy nhược, tốt cho tiêu hóa, chống táo bón, giảm stress... Quả chuối là một nguồn cung cấp kali, vitamin C, vitamin B6 và chất xơ dồi dào.",
+      "categories": "Trái Cây",
+      "liked": false
+    },
+    {
+      "id": "3",
+      "name": "Cà chua",
+      "price": 8000,
+      "image": "https://imgur.com/tkDDpOV.jpg",
+      "description": "Quả cà chua là một loại trái cây rất phổ biến và bổ dưỡng. Quả cà chua có màu đỏ tươi, hình tròn và có nhiều hạt bên trong. Quả cà chua có thể ăn sống, nấu canh, làm sốt hay dùng làm nguyên liệu cho nhiều món ăn khác nhau. Quả cà chua có nhiều vitamin C, lycopene và chất chống oxy hóa, giúp tăng cường sức khỏe, đẹp da và phòng ngừa ung thư. Quả cà chua cũng rất dễ trồng và chăm sóc, bạn có thể tự trồng quả cà chua tại nhà để có nguồn cung cấp tươi ngon và sạch sẽ.",
+      "categories": "Rau Củ",
+      "liked": false
+    },
+    {
+      "id": "4",
+      "name": "Nho",
+      "price": 15000,
+      "image": "https://imgur.com/oK0mC7X.jpg",
+      "description": "Quả nho là một loại trái cây rất ngon và bổ dưỡng. Quả nho có nhiều màu sắc, hình dạng và hương vị khác nhau, tùy thuộc vào giống nho và điều kiện trồng trọt. Quả nho có thể ăn tươi hoặc làm nước ép, rượu, mứt, nho khô và nhiều sản phẩm khác. Quả nho chứa nhiều vitamin, khoáng chất và chất chống oxy hóa có lợi cho sức khỏe. Quả nho cũng có tác dụng làm đẹp da, tóc và răng.",
+      "categories": "Trái Cây",
+      "liked": false
+    },
+    {
+      "id": "5",
+      "name": "Cam",
+      "price": 12000,
+      "image": "https://imgur.com/YZr6mnT.jpg",
+      "description": "Quả cam là một loại quả có múi thuộc họ Cửu lý hương, có tên khoa học là Citrus sinensis. Quả cam có nguồn gốc từ Châu Á, có màu da cam, màu xanh hoặc màu vàng khi chín. Quả cam có vị ngọt, chua dịu và thơm, chứa nhiều vitamin C và chất chống oxy hóa. Quả cam có thể ăn tươi, vắt lấy nước hoặc làm mứt, thạch.",
+      "categories": "Trái Cây",
+      "liked": true
+    },
+    {
+      "id": "6",
+      "name": "Lê",
+      "price": 18000,
+      "image": "https://i.imgur.com/QUNq8k6.jpg",
+      "description": "Quả lê là một loại trái cây ngon và bổ dưỡng, có nhiều công dụng cho sức khỏe. Quả lê có tính mát, hơi chua, có thể thanh nhiệt, nhuận phế, tiêu đờm, giảm ho, thanh tâm giáng hỏa, dưỡng huyết sinh tân, nhuận trường, tiêu độc. Quả lê cũng giàu chất xơ, vitamin C, K, các vitamin nhóm B và các khoáng chất như canxi, magie, đồng, mangan... Ăn quả lê thường xuyên có thể phòng ngừa táo bón, viêm nhiễm, bệnh tim mạch, tiểu đường loại 2 và giúp giảm cân hiệu quả.",
+      "categories": "Trái Cây",
+      "liked": false
+    },
+    {
+      "id": "7",
+      "name": "Cà rốt",
+      "price": 10000,
+      "image": "https://i.imgur.com/M5XdFbR.png",
+      "description": "Củ cà rốt là một loại rau củ giàu vitamin A, beta-carotene và chất chống oxy hóa. Cà rốt có thể ăn sống, nấu chín, xào, luộc, nướng hay làm salad. Cà rốt cũng có thể làm thành nước ép, súp hay bánh ngọt. Cà rốt có nhiều màu sắc khác nhau, từ vàng, cam, đỏ cho đến tím. Cà rốt có hương vị ngọt và giòn, rất hấp dẫn và bổ dưỡng. Hãy mua củ cà rốt ngay hôm nay tại trang web của chúng tôi để nhận được ưu đãi hấp dẫn và giao hàng nhanh chóng!",
+      "categories": "Rau Củ",
+      "liked": false
+    },
+    {
+      "id": "8",
+      "name": "Dưa chuột",
+      "price": 7000,
+      "image": "https://i.imgur.com/bVfTVUv.jpg",
+      "description": "Dưa chuột là một loại rau quả tươi mát, giàu vitamin và khoáng chất, có tác dụng thanh nhiệt, giải độc và làm đẹp da. Bạn có thể ăn dưa chuột sống, chế biến thành các món salad, nộm, dưa chua hoặc kết hợp với các loại thịt, cá để tăng hương vị. Tại trang web bán hàng của chúng tôi, bạn sẽ tìm thấy những quả dưa chuột tươi ngon, sạch sẽ, được trồng theo phương pháp hữu cơ, không sử dụng hóa chất bảo quản. Hãy nhanh tay đặt hàng ngay hôm nay để nhận được ưu đãi hấp dẫn và giao hàng miễn phí trong vòng 24 giờ!",
+      "categories": "Rau Củ",
+      "liked": false
+    },
+    {
+      "id": "9",
+      "name": "Kiwi",
+      "price": 30000,
+      "image": "https://i.imgur.com/6OkvcBI.jpg",
+      "description": "Quả kiwi là một loại trái cây có nguồn gốc từ Trung Quốc, nhưng được đặt tên theo chim kiwi của New Zealand. Quả kiwi có vỏ nâu lông, thịt xanh lá cây hoặc vàng tươi, và hạt đen nhỏ. Quả kiwi có vị chua ngọt, thơm và mát. Quả kiwi giàu vitamin C, K, E, folate và chất chống oxy hóa. Quả kiwi có thể ăn sống, làm nước ép, salad hoặc bánh ngọt.",
+      "categories": "Trái Cây",
+      "liked": false
+    },
+    {
+      "id": "10",
+      "name": "Tôm",
+      "price": 150000,
+      "image": "https://i.imgur.com/0fwpDGl.jpg",
+      "description": " Tôm là một loại hải sản ngon và bổ dưỡng, được nhiều người yêu thích.  Tôm có thân hình dài, màu sắc đa dạng, từ đỏ, cam, vàng cho đến xanh, tím.  Tôm có vỏ cứng bảo vệ cơ thể, đầu có hai đôi mắt nhỏ và hai cái càng lớn để bắt mồi.  Tôm có thể chế biến thành nhiều món ăn hấp dẫn, như tôm chiên giòn, tôm rang muối, tôm nướng, tôm hấp...  Tôm là một nguồn cung cấp protein, canxi, sắt và vitamin cho cơ thể. Hãy đặt mua con tôm ngay hôm nay để thưởng thức hương vị tuyệt vời của biển cả!",
+      "categories": "Thịt",
+      "liked": false
+    },
+    {
+      "id": "11",
+      "name": "Gà",
+      "price": 80000,
+      "image": "https://i.imgur.com/2ndCW0z.jpg",
+      "description": "Thịt gà là một loại thực phẩm phổ biến và ngon miệng, có nhiều cách chế biến khác nhau. Bạn có thể nướng, chiên, hấp, xào, om, kho, nấu canh hoặc làm salad với thịt gà. Thịt gà có chứa nhiều protein, vitamin và khoáng chất, tốt cho sức khỏe và sắc đẹp. Hãy đặt mua thịt gà tươi ngon và sạch sẽ từ app bán hàng của chúng tôi ngay hôm nay để thưởng thức những món ăn hấp dẫn và bổ dưỡng!",
+      "categories": "Thịt",
+      "liked": false
+    },
+    {
+      "id": "12",
+      "name": "Rau Muống",
+      "price": 12000,
+      "image": "https://i.imgur.com/9LmYAZa.jpg",
+      "description": "Rau muống là một loại rau xanh thường được sử dụng trong ẩm thực Việt Nam. Rau muống có vị ngọt, giòn và mát, rất tốt cho sức khỏe. Rau muống có thể chế biến thành nhiều món ăn ngon, như luộc, xào tỏi, nấu canh chua hay làm gỏi. Rau muống cũng giàu chất dinh dưỡng, như vitamin A, C, K, canxi, sắt và chất xơ. Rau muống là một nguồn thực phẩm bổ dưỡng và dễ tìm cho mọi gia đình.",
+      "categories": "Rau Củ",
+      "liked": false
+    },
+    {
+      "id": "13",
+      "name": "Cá",
+      "price": 90000,
+      "image": "https://i.imgur.com/bmr5j0g.jpg",
+      "description": "Thịt cá là một nguồn thực phẩm giàu dinh dưỡng, tốt cho sức khỏe và sắc đẹp. Bạn có thể chế biến thịt cá theo nhiều cách khác nhau, như nướng, chiên, hấp, kho, nấu canh... Thịt cá có vị ngọt, thơm và mềm, rất hợp với khẩu vị của nhiều người. Bạn có thể mua thịt cá tươi ngon và chất lượng cao tại app bán hàng của chúng tôi. Chúng tôi cam kết giao hàng nhanh chóng, an toàn và tiện lợi. Hãy đặt hàng ngay hôm nay để thưởng thức những món ăn ngon từ thịt cá nhé!",
+      "categories": "Thịt",
+      "liked": false
+    },
+    {
+      "id": "14",
+      "name": "Cua",
+      "price": 180000,
+      "image": "https://i.imgur.com/hbLbQsP.jpg",
+      "description": "Thịt cua là một món ăn ngon và bổ dưỡng, được nhiều người yêu thích. Thịt cua có màu trắng ngà, thơm ngon và ngọt lịm, có thể chế biến thành nhiều món hấp dẫn như cua rang me, cua hấp bia, cua xào sả ớt... Thịt cua còn giàu protein, canxi, sắt và các vitamin, có lợi cho sức khỏe và sắc đẹp. Hãy đặt mua thịt cua ngay hôm nay để thưởng thức hương vị tuyệt vời của biển cả!",
+      "categories": "Thịt",
+      "liked": false
+    },
+    {
+      "id": "15",
+      "name": "Dâu Tây",
+      "price": 40000,
+      "image": "https://i.imgur.com/HgKDj73.jpg",
+      "description": "Dâu tây là một loại trái cây ngon và bổ dưỡng. Chúng có màu đỏ tươi, hình dạng như trái tim và có nhiều hạt nhỏ trên bề mặt. Dâu tây có vị ngọt, chua và thơm. Chúng có thể ăn sống, làm nước ép, sinh tố, kem, bánh ngọt hoặc mứt. Dâu tây cũng giàu vitamin C, chất chống oxy hóa và chất xơ. Ăn dâu tây có thể giúp cải thiện sức khỏe da, tóc, răng và xương. Dâu tây là một loại trái cây tuyệt vời để thưởng thức vào mùa hè.",
+      "categories": "Trái Cây",
+      "liked": false
+    },
+    {
+      "id": "16",
+      "name": "Vịt",
+      "price": 100000,
+      "image": "https://i.imgur.com/2ndCW0z.jpg",
+      "description": "Thịt vịt là một loại thực phẩm giàu dinh dưỡng và hương vị. Bạn có thể chế biến thịt vịt theo nhiều cách khác nhau, như luộc, nướng, xào, kho, quay... Thịt vịt có chứa nhiều protein, sắt, kẽm và vitamin B, giúp tăng cường sức khỏe và miễn dịch. Thịt vịt cũng có thể giảm nguy cơ bệnh tim, tiểu đường và ung thư. Hãy đặt mua thịt vịt ngay hôm nay trên app bán hàng của chúng tôi để thưởng thức món ăn ngon và bổ dưỡng cho cả gia đình!",
+      "categories": "Thịt",
+      "liked": false
+    },
+    {
+      "id": "17",
+      "name": "Cừu",
+      "price": 150000,
+      "image": "https://i.imgur.com/4llseDd.jpg",
+      "description": "Thịt cừu là một loại thực phẩm giàu dinh dưỡng và ngon miệng. Bạn có thể chế biến thịt cừu theo nhiều cách khác nhau, như nướng, hầm, xào, hay chiên. Thịt cừu có mùi thơm đặc trưng và vị ngọt thanh. Thịt cừu cũng có nhiều lợi ích cho sức khỏe, như tăng cường hệ miễn dịch, chống oxy hóa, và bổ sung protein. Hãy đặt mua thịt cừu ngay hôm nay để thưởng thức món ăn tuyệt vời này!",
+      "categories": "Thịt",
+      "liked": false
+    },
+    {
+      "id": "18",
+      "name": "Ngỗng",
+      "price": 120000,
+      "image": "https://i.imgur.com/YLbUXkj.jpg",
+      "description": "Thịt ngỗng là một món ăn ngon và bổ dưỡng, thường được dùng trong các dịp lễ tết hoặc tiệc sang trọng. Thịt ngỗng có màu vàng óng, da giòn, thịt mềm và thơm ngon. Thịt ngỗng cũng giàu protein, vitamin và khoáng chất, có lợi cho sức khỏe. Bạn có thể chế biến thịt ngỗng theo nhiều cách khác nhau, như nướng, quay, hầm, xào hoặc luộc. Thịt ngỗng sẽ hợp với nhiều loại gia vị và rau củ, tạo nên những món ăn hấp dẫn và đậm đà. Hãy đặt mua thịt ngỗng ngay hôm nay để thưởng thức một bữa ăn tuyệt vời cùng gia đình và bạn bè!",
+      "categories": "Thịt",
+      "liked": false
+    }
+  ],
+  "carts": [],
+  "orders": [],
+  "contacts": []
+}
