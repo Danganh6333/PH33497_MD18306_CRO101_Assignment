@@ -31,7 +31,7 @@ const SignUp = () => {
       phoneNumber: phoneNumber,
       password: password,
     };
-    let url_api = "http://192.168.1.2:3000/users";
+    let url_api = "http://192.168.1.103:3000/users";
     fetch(url_api, {
       method: "POST",
       headers: {

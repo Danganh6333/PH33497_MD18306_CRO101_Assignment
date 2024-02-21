@@ -5,7 +5,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "server": "json-server --host 192.168.1.2 --port 3000 --watch Database/Data/PH33497_ass.json",
+    "server": "json-server --host 192.168.1.103 --port 3000 --watch Database/Data/PH33497_ass.json",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
@@ -16,8 +16,9 @@
     "@react-navigation/native-stack": "^6.9.18",
     "@rneui/base": "^4.0.0-rc.8",
     "@rneui/themed": "^4.0.0-rc.8",
-    "expo": "~50.0.6",
+    "expo": "^50.0.7",
     "expo-font": "~11.10.3",
+    "expo-mail-composer": "~12.7.1",
     "expo-status-bar": "~1.11.1",
     "json-server": "^1.0.0-alpha.23",
     "pinar": "^0.12.2",

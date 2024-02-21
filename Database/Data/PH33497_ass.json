@@ -8,18 +8,11 @@
       "password": "admin"
     },
     {
-      "id": "563b",
-      "username": "admin1",
+      "username": "adss",
       "email": "admin1@gmail.com",
       "phoneNumber": "0333556204",
-      "password": "admin1"
-    },
-    {
-      "id": "e8ab",
-      "username": "admin3",
-      "email": "admin3@gmail.com",
-      "phoneNumber": "0333556204",
-      "password": "admin3"
+      "password": "admin1",
+      "id": "563b"
     },
     {
       "id": "3e43",
@@ -27,6 +20,34 @@
       "email": "admin5@gmail.com",
       "phoneNumber": "0333556204",
       "password": "admin5"
+    },
+    {
+      "id": "3ab0",
+      "username": "admin5",
+      "email": "admin5@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin5"
+    },
+    {
+      "id": "d869",
+      "username": "admin5",
+      "email": "admin5@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin5"
+    },
+    {
+      "id": "3db9",
+      "username": "admin5",
+      "email": "admin5@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin5"
+    },
+    {
+      "username": "aaaasss",
+      "email": "aaaaa@gmail.com",
+      "phoneNumber": "03335562043",
+      "password": "admin",
+      "id": "fb4b"
     }
   ],
   "products": [
@@ -37,7 +58,7 @@
       "image": "https://i.imgur.com/8ubkI5C.jpg",
       "description": "Quả táo là một loại trái cây rất phổ biến và tốt cho sức khỏe. Quả táo có nhiều màu sắc, hình dạng và hương vị khác nhau, từ đỏ đến xanh, từ tròn đến hình bầu dục, từ ngọt đến chua. Quả táo có thể ăn sống hoặc chế biến thành nhiều món ăn ngon, như bánh táo, nước ép táo hay salad táo. Quả táo cũng có nhiều lợi ích cho sức khỏe, như giúp cải thiện tiêu hóa, làm sạch răng miệng và cung cấp vitamin C",
       "categories": "Trái Cây",
-      "liked": false
+      "liked": true
     },
     {
       "id": "2",
@@ -73,7 +94,7 @@
       "image": "https://imgur.com/YZr6mnT.jpg",
       "description": "Quả cam là một loại quả có múi thuộc họ Cửu lý hương, có tên khoa học là Citrus sinensis. Quả cam có nguồn gốc từ Châu Á, có màu da cam, màu xanh hoặc màu vàng khi chín. Quả cam có vị ngọt, chua dịu và thơm, chứa nhiều vitamin C và chất chống oxy hóa. Quả cam có thể ăn tươi, vắt lấy nước hoặc làm mứt, thạch.",
       "categories": "Trái Cây",
-      "liked": true
+      "liked": false
     },
     {
       "id": "6",
@@ -193,7 +214,33 @@
       "liked": false
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "id": "1",
+      "idProduct": "18",
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "idProduct": "12",
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "idProduct": "10",
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "idProduct": "6",
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "idProduct": "7",
+      "quantity": 1
+    }
+  ],
   "orders": [],
   "contacts": []
 }

@@ -1,29 +1,27 @@
-import { SafeAreaView, ScrollView, StyleSheet, TextInput } from "react-native";
-import React, { useState } from "react";
+import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import React, { useState, useEffect } from "react";
 import SearchBox from "../Others/SearchBox";
 import { useNavigation } from "@react-navigation/native";
 
-const Favourites = (props) => {
+const Favourites = () => {
   const [input, setInput] = useState("");
   const navigation = useNavigation();
   const [FruitList, setFruitList] = useState([]);
-  const getListFruit = async () => {
-    let url_api = "http://192.168.1.2:3000/products";
-    try {
-      const response = await fetch(url_api);
-      const json = await response.json();
-      setFruitList(json);
-    } catch (err) {
-      console.log(err);
-    } finally {
-    }
-  };
-  React.useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
-      getListFruit();
-    });
-    return unsubscribe;
-  }, [navigation]);
+  
+  useEffect(() => {
+    const getListFruit = async () => {
+      let url_api = "http://192.168.1.103:3000/products";
+      try {
+        const response = await fetch(url_api);
+        const json = await response.json();
+        setFruitList(json);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getListFruit();
+  }, []);
+
   return (
     <SafeAreaView>
       <TextInput
@@ -35,7 +33,10 @@ const Favourites = (props) => {
         value={input}
         onChangeText={(text) => setInput(text)}
       />
-      <SearchBox data={FruitList} input={input} setInput={setInput} />
+      <SearchBox
+        data={FruitList}
+        input={input}
+      />
     </SafeAreaView>
   );
 };

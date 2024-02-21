@@ -16,10 +16,11 @@ const TopNavigation = (props) => {
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [isLoading, setisLoading] = useState(true);
   const [FruitList, setFruitList] = useState([]);
+  const [likedItems, setLikedItems] = useState(false);
   const navigation = useNavigation();
   const [filteredData, setFilteredData] = useState(FruitList);
   const getListFruit = async () => {
-    let url_api = "http://192.168.1.2:3000/products";
+    let url_api = "http://192.168.1.103:3000/products";
     try {
       const response = await fetch(url_api);
       const json = await response.json();
@@ -41,6 +42,51 @@ const TopNavigation = (props) => {
       (item) => item.categories === category
     );
     setFilteredData(filteredItems);
+  };
+  useEffect(() => {
+    const initialLikedItems = {};
+    FruitList.forEach((item) => {
+      initialLikedItems[item.id] = item.liked;
+    });
+    setLikedItems(initialLikedItems);
+  }, [FruitList]);
+  
+  const toggleLiked = (itemId) => {
+    const item = FruitList.find((item) => item.id === itemId);
+
+    if (!item) {
+      console.log("Item not found");
+      return;
+    }
+    setLikedItems((prevLikedItems) => ({
+      ...prevLikedItems,
+      [itemId]: !prevLikedItems[itemId],
+    }));
+
+    const updatedProduct = { ...item, liked: !likedItems[itemId] };
+
+    let url_api = `http://192.168.1.103:3000/products/${itemId}`;
+    fetch(url_api, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
+      .then((response) => {
+        if (response.status == 201) {
+          console.log("Cập nhật thành công");
+          Toast.show({
+            type: "info",
+            text1: "Thông báo",
+            text2: "Cập nhật thành công",
+          });
+          getListFruit();
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating liked status:", error);
+      });
   };
 
   useEffect(() => {
@@ -99,47 +145,26 @@ const TopNavigation = (props) => {
           navigation={navigation}
           numColumns={2}
           ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-          renderItem={({ item }) => <ShoppingItem item={item} />}
+          renderItem={({ item }) => (
+            <ShoppingItem
+              item={item}
+              liked={likedItems[item.id]}
+              toggleLiked={(itemId) => toggleLiked(itemId)}
+            />
+          )}
           keyExtractor={(item, index) => index.toString()}
         />
       )}
     </View>
   );
 };
-const ShoppingItem = ({ item }) => {
+const ShoppingItem = ({ item, liked, toggleLiked }) => {
   const navigation = useNavigation();
-  const [liked, setLiked] = useState(item.liked);
-  const toggleLiked = () => {
-    setLiked(!liked);
-    let updatedProduct = { ...item, liked: !liked };
-    let url_api = `http://192.168.1.2:3000/products/${item.id}`;
-    fetch(url_api, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
-      .then((response) => {
-        if (response.status == 201) {
-          console.log("Cập nhật thành công");
-          Toast.show({
-            type: "info",
-            text1: "Thông báo",
-            text2: "Cập nhật thành công",
-          });
-          getListFruit();
-        }
-      })
-      .catch((error) => {
-        console.error("Error updating liked status:", error);
-      });
-  };
   return (
     <TouchableOpacity
       style={{ marginVertical: 12, marginHorizontal: 20 }}
       onPress={() => {
-        navigation.navigate("ProductDetails", { item:item });
+        navigation.navigate("ProductDetails", { item: item });
       }}
     >
       <View style={{ position: "relative" }}>
@@ -159,7 +184,7 @@ const ShoppingItem = ({ item }) => {
             right: 5,
             zIndex: 1,
           }}
-          onPress={toggleLiked}
+          onPress={() => toggleLiked(item.id)}
         >
           <Icon
             name={liked ? "heart" : "hearto"}

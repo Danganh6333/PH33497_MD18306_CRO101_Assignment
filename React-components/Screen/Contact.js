@@ -1,23 +1,45 @@
 import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import CustomButton3 from "../Button/CustomButton3";
 import DashedLine from "../Others/DashedLine";
 import InternetLinks from "../Others/InternetLinks";
-import { Rating, AirbnbRating } from "react-native-ratings";
-import Mailer from 'react-native-mail';
+import { AirbnbRating } from "react-native-ratings";
+import * as MailComposer from 'expo-mail-composer';
+import { Alert } from "react-native";
 
 const Contact = () => {
-  const sendFeedback= () => {
-    handleEmail = () => {
-      const to = ['dangchph33497@fpt.edu.vn'] // string or array of email addresses
-      email(to, {
-          cc: ['bazzy@moo.com', 'doooo@daaa.com'], // string or array of email addresses
-          bcc: 'mee@mee.com', // string or array of email addresses
-          subject: 'Show how to use',
-          body: 'Some body right here'
-      }).catch(console.error)
-  }
-  }
+  const [topic, setTopic] = useState("");
+  const [content, setContent] = useState("");
+
+  const sendFeedback = async() => {
+    if (!topic || !content) {
+      Alert.alert("Error", "Please provide a topic and content for the feedback.");
+      return;
+    }
+    try {
+      const isAvailable = await MailComposer.isAvailableAsync();
+      console.log(isAvailable);
+      if (isAvailable) {
+        await MailComposer.composeAsync({
+          recipients: ["Dangchph33497@fpt.edu.vn"], 
+          subject: topic,
+          body: content,
+        });
+      } else {
+        Alert.alert("Mail Composer Not Available", "Email functionality is not available on this device.");
+      }
+    } catch (error) {
+      Alert.alert("Unable To Send Feedback", undefined, [
+        {
+          text: "Copy feedback email",
+          onPress: () => Clipboard.setString("unleaded@reiner.design")
+        },
+        {
+          text: "OK"
+        }
+      ]);
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Đánh Giá</Text>
@@ -34,7 +56,7 @@ const Contact = () => {
         <Text style={styles.label}>
           Chủ Đề:<Text style={{ color: "red" }}>*</Text>
         </Text>
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input} onChangeText={(txt) => setTopic(txt)} />
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>
@@ -44,14 +66,16 @@ const Contact = () => {
           style={styles.inputFeedback}
           numberOfLines={4}
           placeholder="Type your feedback here"
+          onChangeText={(txt) => setContent(txt)}
         />
       </View>
-      <CustomButton3 title="Gửi Phản Hồi" onPress={sendFeedback}/>
+      <CustomButton3 title="Gửi Phản Hồi" onPress={sendFeedback} />
       <DashedLine />
       <InternetLinks />
     </View>
   );
-};
+}
+
 
 export default Contact;
 
@@ -76,8 +100,8 @@ const styles = StyleSheet.create({
     color: "#36454F",
     textAlign: "left",
   },
-  inputContainer:{
-     width: "90%",
+  inputContainer: {
+    width: "90%",
   },
   input: {
     marginBottom: 13,

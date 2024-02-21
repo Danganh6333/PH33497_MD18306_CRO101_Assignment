@@ -26,7 +26,7 @@ const SignIn = () => {
       return;
     }
     try {
-      let url_api = "http://192.168.1.2:3000/users?email=" + email;
+      let url_api = "http://192.168.1.103:3000/users?email=" + email;
       const response = await fetch(url_api);
       const res_login = await response.json();
       if (res_login.length !== 1) {
@@ -36,7 +36,7 @@ const SignIn = () => {
         if (objU.password !== password) {
           Alert.alert("Sai mật khẩu");
         } else {
-          await AsyncStorage.setItem("LoginData", JSON.stringify(objU.id));
+          await AsyncStorage.setItem("LoginData", JSON.stringify(objU));
           if (isChecked) {
             await AsyncStorage.setItem("LoginInfo", JSON.stringify(objU));
           }
