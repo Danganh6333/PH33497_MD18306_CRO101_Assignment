@@ -3,10 +3,9 @@ import React, { useEffect, useState } from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import CustomButton2 from "../Button/CustomButton2";
-import { useNavigation } from "@react-navigation/native";
 
 const PersonalDetails = (props) => {
-  const Move = useNavigation();
+  const {navigation} = props;
   const [updatedUsername, setUpdatedUsername] = useState("");
   const [updatedPhoneNumber, setUpdatedPhoneNumber] = useState("");
   const [updatedEmail, setUpdatedEmail] = useState("");
@@ -53,8 +52,6 @@ const PersonalDetails = (props) => {
       Alert.alert("Mật Khẩu Sai");
       return;
     }
-  
-    // Check if the updated information conflicts with existing user info
     const userExists = userInfo.username === updatedUsername ||
       userInfo.email === updatedEmail ||
       userInfo.phoneNumber === updatedPhoneNumber;
@@ -77,7 +74,7 @@ const PersonalDetails = (props) => {
       .then((result) => {
         if (result.status == 201) {
           Alert.alert("Cập nhật thành công");
-          Move.navigate("BottomTabNavigator");
+          navigation.navigate("BottomTabNavigator");
         }
       })
       .catch((error) => {

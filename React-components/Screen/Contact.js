@@ -5,39 +5,24 @@ import DashedLine from "../Others/DashedLine";
 import InternetLinks from "../Others/InternetLinks";
 import { AirbnbRating } from "react-native-ratings";
 import * as MailComposer from 'expo-mail-composer';
-import { Alert } from "react-native";
 
 const Contact = () => {
   const [topic, setTopic] = useState("");
   const [content, setContent] = useState("");
-
-  const sendFeedback = async() => {
-    if (!topic || !content) {
-      Alert.alert("Error", "Please provide a topic and content for the feedback.");
-      return;
-    }
+  const sendEmail = async () => {
     try {
-      const isAvailable = await MailComposer.isAvailableAsync();
-      console.log(isAvailable);
-      if (isAvailable) {
-        await MailComposer.composeAsync({
-          recipients: ["Dangchph33497@fpt.edu.vn"], 
-          subject: topic,
-          body: content,
-        });
+      const { status } = await MailComposer.composeAsync({
+        recipients: ['dangchph33497@fpt.edu.vn'],
+        subject: topic,
+        body: content,
+      });
+      if (status === 'sent') {
+        console.log('Email sent!');
       } else {
-        Alert.alert("Mail Composer Not Available", "Email functionality is not available on this device.");
+        console.log('Email not sent.');
       }
     } catch (error) {
-      Alert.alert("Unable To Send Feedback", undefined, [
-        {
-          text: "Copy feedback email",
-          onPress: () => Clipboard.setString("unleaded@reiner.design")
-        },
-        {
-          text: "OK"
-        }
-      ]);
+      console.error('Error sending email:', error);
     }
   };
   return (
@@ -69,7 +54,7 @@ const Contact = () => {
           onChangeText={(txt) => setContent(txt)}
         />
       </View>
-      <CustomButton3 title="Gửi Phản Hồi" onPress={sendFeedback} />
+      <CustomButton3 title="Gửi Phản Hồi" onPress={sendEmail} />
       <DashedLine />
       <InternetLinks />
     </View>

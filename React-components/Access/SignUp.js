@@ -2,27 +2,50 @@ import React, { useState } from "react";
 import { View, StyleSheet, Text, TextInput, Alert, Image } from "react-native";
 import Logo from "../Others/LogoDisplay.js";
 import CustomButton from "../Button/CustomButton1.js";
-import { useNavigation } from "@react-navigation/native";
-import isEmail from 'validator/lib/isEmail';
+import isEmail from "validator/lib/isEmail";
 
-const SignUp = () => {
-  const stack = useNavigation();
+const SignUp = (props) => {
+  const { navigation } = props;
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setphoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const DangKy = async () => {
-    if(rePassword !== password){
+    let url_api = "http://192.168.1.103:3000/users";
+    if (rePassword !== password) {
       alert("Hai ô mật khẩu phải trùng nhau");
       return;
     }
-    if(!isEmail(email)){
+    if (!isEmail(email)) {
       alert("Email chưa đúng định dạng");
       return;
     }
-    if(username.trim()<3 && password.trim()<=5){
-      alert("Tên người dùng phải trên 3 ký tự và mật khẩu phải trên hoặc bằng 5 ký tự");
+    if (username.trim() < 3 && password.trim() <= 5) {
+      alert(
+        "Tên người dùng phải trên 3 ký tự và mật khẩu phải trên hoặc bằng 5 ký tự"
+      );
+      return;
+    }
+    const response = await fetch(url_api);
+    const data = await response.json();
+
+    const existingUsername = data.find((user) => user.username === username);
+    const existingEmail = data.find((user) => user.email === email);
+    const existingPhoneNumber = data.find(
+      (user) => user.phoneNumber === phoneNumber
+    );
+    if (existingUsername) {
+      alert("Tên người dùng đã tồn tại");
+      return;
+    }  
+    if (existingEmail) {
+      alert("Email đã tồn tại");
+      return;
+    }
+  
+    if (existingPhoneNumber) {
+      alert("Số điện thoại đã tồn tại");
       return;
     }
     let objSP = {
@@ -31,7 +54,7 @@ const SignUp = () => {
       phoneNumber: phoneNumber,
       password: password,
     };
-    let url_api = "http://192.168.1.103:3000/users";
+
     fetch(url_api, {
       method: "POST",
       headers: {
@@ -41,7 +64,7 @@ const SignUp = () => {
       body: JSON.stringify(objSP),
     })
       .then((result) => {
-        if (result.status == 201) alert("Thêm thành công");
+        if (result.status == 201) alert("Đăng Ký thành công");
       })
       .catch((ex) => {
         console.log(ex);
@@ -49,7 +72,7 @@ const SignUp = () => {
   };
   const DangNhap = () => {
     Alert.alert("Bạn Bấm Đăng Nhập");
-    stack.navigate("SignIn");
+    navigation.navigate("SignIn");
   };
   return (
     <View>
@@ -120,7 +143,9 @@ const SignUp = () => {
             placeholder="Mời nhập lại mật khẩu"
             placeholderTextColor="#555"
             secureTextEntry
-            onChangeText={(txt) => {setRePassword(txt)}}
+            onChangeText={(txt) => {
+              setRePassword(txt);
+            }}
           />
           <Image
             source={require("../../assets/img/userlock.png")}

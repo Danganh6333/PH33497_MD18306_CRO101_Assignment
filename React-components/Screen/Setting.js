@@ -8,10 +8,9 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { useNavigation } from "@react-navigation/native";
 
 const Setting = (props) => {
-  const move = useNavigation();
+  const {navigation} = props
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={{ flex: 1, gap: 24, padding: 25 }}>
@@ -26,7 +25,7 @@ const Setting = (props) => {
       <View style={styles.hr} />
       <TouchableOpacity
         onPress={() => {
-          move.navigate("PersonalDetails");
+          navigation.navigate("PersonalDetails");
         }}
       >
         <View style={styles.itemContainer}>

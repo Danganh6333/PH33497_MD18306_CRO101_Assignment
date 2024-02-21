@@ -5,7 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 
 const Favourites = () => {
   const [input, setInput] = useState("");
-  const navigation = useNavigation();
   const [fruitList, setFruitList] = useState([]);
   const [likedItems, setLikedItems] = useState({});
   

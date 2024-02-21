@@ -50,7 +50,7 @@ const TopNavigation = (props) => {
     });
     setLikedItems(initialLikedItems);
   }, [FruitList]);
-  
+
   const toggleLiked = (itemId) => {
     const item = FruitList.find((item) => item.id === itemId);
 
@@ -74,18 +74,22 @@ const TopNavigation = (props) => {
       body: JSON.stringify(updatedProduct),
     })
       .then((response) => {
-        if (response.status == 201) {
-          console.log("Cập nhật thành công");
+        if (response.ok) {
           Toast.show({
             type: "info",
             text1: "Thông báo",
             text2: "Cập nhật thành công",
           });
-          getListFruit();
+          fetch("http://192.168.1.103:3000/products")
+            .then((rep) => rep.json())
+            .then((data) => {
+              setFruitList(data);
+            })
+            .catch((err) => console.log(err));
         }
       })
       .catch((error) => {
-        console.error("Error updating liked status:", error);
+        console.error("Lỗi cập nhật thích :", error);
       });
   };
 

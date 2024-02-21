@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import Icon from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
+import Toast from "react-native-toast-message";
 
 const SearchBox = ({ data, input }) => {
   const navigation = useNavigation();
   const [likedItems, setLikedItems] = useState(false);
-
   useEffect(() => {
     const initialLikedItems = {};
     data.forEach((item) => {
@@ -21,7 +21,6 @@ const SearchBox = ({ data, input }) => {
     });
     setLikedItems(initialLikedItems);
   }, [data]);
-
   const toggleLiked = (itemId) => {
     const item = data.find((item) => item.id === itemId);
     if (!item) {
@@ -44,13 +43,21 @@ const SearchBox = ({ data, input }) => {
       body: JSON.stringify(updatedProduct),
     })
       .then((response) => {
-        if (response.status == 201) {
-          console.log("Cập nhật thành công");
+        console.log(response.status);
+        if (response.ok) {
           Toast.show({
             type: "info",
             text1: "Thông báo",
             text2: "Cập nhật thành công",
           });
+          fetch("http://192.168.1.103:3000/products")
+            .then((rep) => rep.json())
+            .then((data) => {
+                setData(data)
+            })
+            .catch((err) => console.log(err));
+        } else {
+          console.log("Failed to update");
         }
       })
       .catch((error) => {
@@ -66,7 +73,7 @@ const SearchBox = ({ data, input }) => {
         }}
         numColumns={2}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-        data={data}
+        data={data.filter((item) => likedItems[item.id])}
         renderItem={({ item }) => {
           if (input === "" || item.name.includes(input)) {
             return (

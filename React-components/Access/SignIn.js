@@ -5,11 +5,10 @@ import CustomButton1 from "../Button/CustomButton1.js";
 import CustomButton2 from "../Button/CustomButton2.js";
 import CustomCheckbox from "../Others/CustomCheckbox.js";
 import Toast from "react-native-toast-message";
-import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const SignIn = () => {
-  const navigation = useNavigation();
+const SignIn = (props) => {
+  const {navigation} = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isChecked, setIsChecked] = useState(false);
