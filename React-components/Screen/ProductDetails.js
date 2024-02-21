@@ -26,7 +26,6 @@ const ProductDetails = ({ route }) => {
           <Icon name="arrow-left" size={25} color="black" />
         </TouchableOpacity>
       </ImageBackground>
-
       <View style={styles.content}>
         <Text style={styles.productName}>{item.name}</Text>
         <Text style={styles.description}>{item.description}</Text>

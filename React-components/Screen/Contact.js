@@ -4,17 +4,21 @@ import CustomButton3 from "../Button/CustomButton3";
 import DashedLine from "../Others/DashedLine";
 import InternetLinks from "../Others/InternetLinks";
 import { AirbnbRating } from "react-native-ratings";
-import * as MailComposer from 'expo-mail-composer';
+import * as MailComposer from "expo-mail-composer";
 
 const Contact = () => {
   const [topic, setTopic] = useState("");
   const [content, setContent] = useState("");
+  const [rating, setRating] = useState(1);
+  const [review, setReview] = useState("Rất kém");
+
   const sendEmail = async () => {
+  
     try {
       const { status } = await MailComposer.composeAsync({
         recipients: ['dangchph33497@fpt.edu.vn'],
         subject: topic,
-        body: content,
+        body: content + "\nReview: " + review + " :" +rating +" sao",
       });
       if (status === 'sent') {
         console.log('Email sent!');
@@ -25,6 +29,30 @@ const Contact = () => {
       console.error('Error sending email:', error);
     }
   };
+  const handleRatingCompleted = (rating) => {
+    setRating(rating);
+    let reviewText = "";
+    switch (rating) {
+      case 1:
+        reviewText = "Rất kém";
+        break;
+      case 2:
+        reviewText = "Kém";
+        break;
+      case 3:
+        reviewText = "Trung bình";
+        break;
+      case 4:
+        reviewText = "Tốt";
+        break;
+      case 5:
+        reviewText = "Xuất sắc";
+        break;
+      default:
+        reviewText = "Rất kém";
+    }
+    setReview(reviewText);
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Đánh Giá</Text>
@@ -32,9 +60,10 @@ const Contact = () => {
         <View style={styles.hr} />
         <AirbnbRating
           count={5}
-          reviews={["Terrible", "Bad", "Meh", "OK", "Good"]}
+          reviews={["Rất kém", "Kém", "Trung bình", "Tốt", "Xuất sắc"]}
           defaultRating={1}
           size={26}
+          onFinishRating={handleRatingCompleted}
         />
       </View>
       <View style={styles.inputContainer}>
@@ -59,8 +88,7 @@ const Contact = () => {
       <InternetLinks />
     </View>
   );
-}
-
+};
 
 export default Contact;
 

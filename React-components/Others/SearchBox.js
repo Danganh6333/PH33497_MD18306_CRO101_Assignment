@@ -53,7 +53,7 @@ const SearchBox = ({ data, input }) => {
           fetch("http://192.168.1.103:3000/products")
             .then((rep) => rep.json())
             .then((data) => {
-                setData(data)
+              setData(data);
             })
             .catch((err) => console.log(err));
         } else {
@@ -70,6 +70,7 @@ const SearchBox = ({ data, input }) => {
         contentContainerStyle={{
           display: "flex",
           alignItems: "center",
+          height: 2000
         }}
         numColumns={2}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}

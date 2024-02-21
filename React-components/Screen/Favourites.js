@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchBox from "../Others/SearchBox";
 import { useNavigation } from "@react-navigation/native";
 
+
 const Favourites = () => {
   const [input, setInput] = useState("");
   const [fruitList, setFruitList] = useState([]);

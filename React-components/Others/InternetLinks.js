@@ -9,7 +9,7 @@ const InternetLinks = () => {
       Linking.openURL('https://www.facebook.com');
     };
     const openReddit = () => {
-      Linking.openURL('https://www.reddit.com/');
+      Linking.openURL('https://www.reddit.com');
     };
   return (
     <View style={styles.khung}>

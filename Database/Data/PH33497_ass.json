@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "43c9",
-      "username": "admin",
-      "email": "admin@gmail.com",
-      "phoneNumber": "0333556204",
-      "password": "admin"
+      "username": "admin4",
+      "email": "admin6@gmail.com",
+      "phoneNumber": "0333556203",
+      "password": "admin",
+      "id": "43c9"
     },
     {
       "id": "602e",
@@ -30,7 +30,7 @@
       "image": "https://i.imgur.com/8ubkI5C.jpg",
       "description": "Quả táo là một loại trái cây rất phổ biến và tốt cho sức khỏe. Quả táo có nhiều màu sắc, hình dạng và hương vị khác nhau, từ đỏ đến xanh, từ tròn đến hình bầu dục, từ ngọt đến chua. Quả táo có thể ăn sống hoặc chế biến thành nhiều món ăn ngon, như bánh táo, nước ép táo hay salad táo. Quả táo cũng có nhiều lợi ích cho sức khỏe, như giúp cải thiện tiêu hóa, làm sạch răng miệng và cung cấp vitamin C",
       "categories": "Trái Cây",
-      "liked": true
+      "liked": false
     },
     {
       "id": "2",
@@ -48,7 +48,7 @@
       "image": "https://imgur.com/tkDDpOV.jpg",
       "description": "Quả cà chua là một loại trái cây rất phổ biến và bổ dưỡng. Quả cà chua có màu đỏ tươi, hình tròn và có nhiều hạt bên trong. Quả cà chua có thể ăn sống, nấu canh, làm sốt hay dùng làm nguyên liệu cho nhiều món ăn khác nhau. Quả cà chua có nhiều vitamin C, lycopene và chất chống oxy hóa, giúp tăng cường sức khỏe, đẹp da và phòng ngừa ung thư. Quả cà chua cũng rất dễ trồng và chăm sóc, bạn có thể tự trồng quả cà chua tại nhà để có nguồn cung cấp tươi ngon và sạch sẽ.",
       "categories": "Rau Củ",
-      "liked": true
+      "liked": false
     },
     {
       "id": "4",
@@ -57,7 +57,7 @@
       "image": "https://imgur.com/oK0mC7X.jpg",
       "description": "Quả nho là một loại trái cây rất ngon và bổ dưỡng. Quả nho có nhiều màu sắc, hình dạng và hương vị khác nhau, tùy thuộc vào giống nho và điều kiện trồng trọt. Quả nho có thể ăn tươi hoặc làm nước ép, rượu, mứt, nho khô và nhiều sản phẩm khác. Quả nho chứa nhiều vitamin, khoáng chất và chất chống oxy hóa có lợi cho sức khỏe. Quả nho cũng có tác dụng làm đẹp da, tóc và răng.",
       "categories": "Trái Cây",
-      "liked": true
+      "liked": false
     },
     {
       "id": "5",
@@ -84,7 +84,7 @@
       "image": "https://i.imgur.com/M5XdFbR.png",
       "description": "Củ cà rốt là một loại rau củ giàu vitamin A, beta-carotene và chất chống oxy hóa. Cà rốt có thể ăn sống, nấu chín, xào, luộc, nướng hay làm salad. Cà rốt cũng có thể làm thành nước ép, súp hay bánh ngọt. Cà rốt có nhiều màu sắc khác nhau, từ vàng, cam, đỏ cho đến tím. Cà rốt có hương vị ngọt và giòn, rất hấp dẫn và bổ dưỡng. Hãy mua củ cà rốt ngay hôm nay tại trang web của chúng tôi để nhận được ưu đãi hấp dẫn và giao hàng nhanh chóng!",
       "categories": "Rau Củ",
-      "liked": true
+      "liked": false
     },
     {
       "id": "8",
@@ -93,7 +93,7 @@
       "image": "https://i.imgur.com/bVfTVUv.jpg",
       "description": "Dưa chuột là một loại rau quả tươi mát, giàu vitamin và khoáng chất, có tác dụng thanh nhiệt, giải độc và làm đẹp da. Bạn có thể ăn dưa chuột sống, chế biến thành các món salad, nộm, dưa chua hoặc kết hợp với các loại thịt, cá để tăng hương vị. Tại trang web bán hàng của chúng tôi, bạn sẽ tìm thấy những quả dưa chuột tươi ngon, sạch sẽ, được trồng theo phương pháp hữu cơ, không sử dụng hóa chất bảo quản. Hãy nhanh tay đặt hàng ngay hôm nay để nhận được ưu đãi hấp dẫn và giao hàng miễn phí trong vòng 24 giờ!",
       "categories": "Rau Củ",
-      "liked": true
+      "liked": false
     },
     {
       "id": "9",
@@ -129,7 +129,7 @@
       "image": "https://i.imgur.com/9LmYAZa.jpg",
       "description": "Rau muống là một loại rau xanh thường được sử dụng trong ẩm thực Việt Nam. Rau muống có vị ngọt, giòn và mát, rất tốt cho sức khỏe. Rau muống có thể chế biến thành nhiều món ăn ngon, như luộc, xào tỏi, nấu canh chua hay làm gỏi. Rau muống cũng giàu chất dinh dưỡng, như vitamin A, C, K, canxi, sắt và chất xơ. Rau muống là một nguồn thực phẩm bổ dưỡng và dễ tìm cho mọi gia đình.",
       "categories": "Rau Củ",
-      "liked": true
+      "liked": false
     },
     {
       "id": "13",
