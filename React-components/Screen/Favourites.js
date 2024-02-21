@@ -6,7 +6,8 @@ import { useNavigation } from "@react-navigation/native";
 const Favourites = () => {
   const [input, setInput] = useState("");
   const navigation = useNavigation();
-  const [FruitList, setFruitList] = useState([]);
+  const [fruitList, setFruitList] = useState([]);
+  const [likedItems, setLikedItems] = useState({});
   
   useEffect(() => {
     const getListFruit = async () => {
@@ -34,8 +35,10 @@ const Favourites = () => {
         onChangeText={(text) => setInput(text)}
       />
       <SearchBox
-        data={FruitList}
+        data={fruitList}
         input={input}
+        likedItems={likedItems}
+        setLikedItems={setLikedItems}
       />
     </SafeAreaView>
   );

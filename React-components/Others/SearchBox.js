@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FlatList,
   Image,
@@ -12,17 +12,29 @@ import { useNavigation } from "@react-navigation/native";
 
 const SearchBox = ({ data, input }) => {
   const navigation = useNavigation();
-  console.log("Heeeey",data);
+  const [likedItems, setLikedItems] = useState(false);
+
+  useEffect(() => {
+    const initialLikedItems = {};
+    data.forEach((item) => {
+      initialLikedItems[item.id] = item.liked;
+    });
+    setLikedItems(initialLikedItems);
+  }, [data]);
+
   const toggleLiked = (itemId) => {
+    const item = data.find((item) => item.id === itemId);
+    if (!item) {
+      console.log("Item not found");
+      return;
+    }
     setLikedItems((prevLikedItems) => ({
       ...prevLikedItems,
       [itemId]: !prevLikedItems[itemId],
     }));
-    let updatedProduct = {
-      ...data.find((item) => item.id === itemId),
-      liked: !likedItems[itemId],
-    };
-    console.log(updatedProduct);
+
+    const updatedProduct = { ...item, liked: !likedItems[itemId] };
+
     let url_api = `http://192.168.1.103:3000/products/${itemId}`;
     fetch(url_api, {
       method: "PUT",
@@ -34,25 +46,17 @@ const SearchBox = ({ data, input }) => {
       .then((response) => {
         if (response.status == 201) {
           console.log("Cập nhật thành công");
-          if (updatedProduct.liked) {
-            setLikedItemsList((prevLikedItemsList) => [
-              ...prevLikedItemsList,
-              updatedProduct,
-            ]);
-          } else {
-            setLikedItemsList((prevLikedItemsList) =>
-              prevLikedItemsList.filter(
-                (item) => item.id !== updatedProduct.id
-              )
-            );
-          }
+          Toast.show({
+            type: "info",
+            text1: "Thông báo",
+            text2: "Cập nhật thành công",
+          });
         }
       })
       .catch((error) => {
         console.error("Error updating liked status:", error);
       });
   };
-
   return (
     <View style={{ marginTop: 10, position: "relative" }}>
       <FlatList
@@ -62,7 +66,7 @@ const SearchBox = ({ data, input }) => {
         }}
         numColumns={2}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-        data={data.filter(item => likedItems[item.id])}
+        data={data}
         renderItem={({ item }) => {
           if (input === "" || item.name.includes(input)) {
             return (
@@ -70,6 +74,7 @@ const SearchBox = ({ data, input }) => {
                 onPress={() => {
                   navigation.navigate("ProductDetails", { item: item });
                 }}
+                toggleLiked={(itemId) => toggleLiked(itemId)}
               >
                 <View style={{ marginVertical: 12, marginHorizontal: 20 }}>
                   <View style={{ position: "relative" }}>

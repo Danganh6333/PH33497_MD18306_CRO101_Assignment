@@ -67,7 +67,7 @@
       "image": "https://imgur.com/3C0r4IV.jpg",
       "description": "Quả chuối là một loại trái cây rất phổ biến và bổ dưỡng. Quả chuối có vị ngọt, mềm và thơm. Quả chuối có thể ăn tươi hoặc chế biến thành nhiều món ăn ngon, như chuối chiên, chuối nếp nướng, chuối hấp, bánh chuối... Quả chuối cũng có nhiều lợi ích cho sức khỏe, như cung cấp năng lượng, chống suy nhược, tốt cho tiêu hóa, chống táo bón, giảm stress... Quả chuối là một nguồn cung cấp kali, vitamin C, vitamin B6 và chất xơ dồi dào.",
       "categories": "Trái Cây",
-      "liked": false
+      "liked": true
     },
     {
       "id": "3",
@@ -76,7 +76,7 @@
       "image": "https://imgur.com/tkDDpOV.jpg",
       "description": "Quả cà chua là một loại trái cây rất phổ biến và bổ dưỡng. Quả cà chua có màu đỏ tươi, hình tròn và có nhiều hạt bên trong. Quả cà chua có thể ăn sống, nấu canh, làm sốt hay dùng làm nguyên liệu cho nhiều món ăn khác nhau. Quả cà chua có nhiều vitamin C, lycopene và chất chống oxy hóa, giúp tăng cường sức khỏe, đẹp da và phòng ngừa ung thư. Quả cà chua cũng rất dễ trồng và chăm sóc, bạn có thể tự trồng quả cà chua tại nhà để có nguồn cung cấp tươi ngon và sạch sẽ.",
       "categories": "Rau Củ",
-      "liked": false
+      "liked": true
     },
     {
       "id": "4",
@@ -85,7 +85,7 @@
       "image": "https://imgur.com/oK0mC7X.jpg",
       "description": "Quả nho là một loại trái cây rất ngon và bổ dưỡng. Quả nho có nhiều màu sắc, hình dạng và hương vị khác nhau, tùy thuộc vào giống nho và điều kiện trồng trọt. Quả nho có thể ăn tươi hoặc làm nước ép, rượu, mứt, nho khô và nhiều sản phẩm khác. Quả nho chứa nhiều vitamin, khoáng chất và chất chống oxy hóa có lợi cho sức khỏe. Quả nho cũng có tác dụng làm đẹp da, tóc và răng.",
       "categories": "Trái Cây",
-      "liked": false
+      "liked": true
     },
     {
       "id": "5",
@@ -175,7 +175,7 @@
       "image": "https://i.imgur.com/hbLbQsP.jpg",
       "description": "Thịt cua là một món ăn ngon và bổ dưỡng, được nhiều người yêu thích. Thịt cua có màu trắng ngà, thơm ngon và ngọt lịm, có thể chế biến thành nhiều món hấp dẫn như cua rang me, cua hấp bia, cua xào sả ớt... Thịt cua còn giàu protein, canxi, sắt và các vitamin, có lợi cho sức khỏe và sắc đẹp. Hãy đặt mua thịt cua ngay hôm nay để thưởng thức hương vị tuyệt vời của biển cả!",
       "categories": "Thịt",
-      "liked": false
+      "liked": true
     },
     {
       "id": "15",
