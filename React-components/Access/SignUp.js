@@ -12,7 +12,7 @@ const SignUp = (props) => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const DangKy = async () => {
-    let url_api = "http://192.168.1.103:3000/users";
+    let url_api = "http://10.24.30.213:3000/users";
     if (rePassword !== password) {
       alert("Hai ô mật khẩu phải trùng nhau");
       return;

@@ -25,7 +25,7 @@ const SignIn = (props) => {
       return;
     }
     try {
-      let url_api = "http://192.168.1.103:3000/users?email=" + email;
+      let url_api = "http://10.24.30.213:3000/users?email=" + email;
       const response = await fetch(url_api);
       const res_login = await response.json();
       if (res_login.length !== 1) {

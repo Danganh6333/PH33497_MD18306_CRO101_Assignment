@@ -34,7 +34,7 @@ const SearchBox = ({ data, input }) => {
 
     const updatedProduct = { ...item, liked: !likedItems[itemId] };
 
-    let url_api = `http://192.168.1.103:3000/products/${itemId}`;
+    let url_api = `http://10.24.30.213:3000/products/${itemId}`;
     fetch(url_api, {
       method: "PUT",
       headers: {
@@ -50,7 +50,7 @@ const SearchBox = ({ data, input }) => {
             text1: "Thông báo",
             text2: "Cập nhật thành công",
           });
-          fetch("http://192.168.1.103:3000/products")
+          fetch("http://10.24.30.213:3000/products")
             .then((rep) => rep.json())
             .then((data) => {
               setData(data);

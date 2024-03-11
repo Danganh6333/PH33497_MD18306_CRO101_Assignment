@@ -20,7 +20,7 @@ const TopNavigation = (props) => {
   const navigation = useNavigation();
   const [filteredData, setFilteredData] = useState(FruitList);
   const getListFruit = async () => {
-    let url_api = "http://192.168.1.103:3000/products";
+    let url_api = "http://10.24.30.213:3000/products";
     try {
       const response = await fetch(url_api);
       const json = await response.json();
@@ -65,7 +65,7 @@ const TopNavigation = (props) => {
 
     const updatedProduct = { ...item, liked: !likedItems[itemId] };
 
-    let url_api = `http://192.168.1.103:3000/products/${itemId}`;
+    let url_api = `http://10.24.30.213:3000/products/${itemId}`;
     fetch(url_api, {
       method: "PUT",
       headers: {
@@ -80,7 +80,7 @@ const TopNavigation = (props) => {
             text1: "Thông báo",
             text2: "Cập nhật thành công",
           });
-          fetch("http://192.168.1.103:3000/products")
+          fetch("http://10.24.30.213:3000/products")
             .then((rep) => rep.json())
             .then((data) => {
               setFruitList(data);

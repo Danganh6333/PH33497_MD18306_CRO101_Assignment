@@ -94,7 +94,7 @@ const Setting = (props) => {
             <View style={styles.buttonDisplay}>
               <Pressable
                 onPress={() => {
-                  move.navigate("SignIn");
+                  navigation.navigate("SignIn");
                 }}
                 style={styles.btnYes}
               >

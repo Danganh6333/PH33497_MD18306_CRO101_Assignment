@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -11,7 +11,38 @@ import { FontAwesome5 as Icon } from "@expo/vector-icons";
 
 const ProductDetails = ({ route }) => {
   const { item } = route.params;
+  const [cartItems, setCartItems] = useState([]);
   const Move = useNavigation();
+  const url_api = "http://10.24.30.213:3000/carts";
+
+  const AddItem = async () => {
+    const isItemInCart = cartItems.some(
+      (cartItem) => cartItem.idProduct === item.id
+    );
+    if (isItemInCart) {
+      alert("Sản Phẩm đã tồn tại trong giỏ hàng");
+      return;
+    }
+    setCartItems([...cartItems, item]);
+    const objSP = {
+      idProduct: item.id,
+      quantity: 1,
+    };
+    fetch(url_api, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(objSP),
+    })
+      .then((result) => {
+        if (result.status == 201) alert("Thêm vào giỏ hàng thành công");
+      })
+      .catch((ex) => {
+        console.log(ex);
+      });
+  };
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -31,9 +62,14 @@ const ProductDetails = ({ route }) => {
         <Text style={styles.description}>{item.description}</Text>
       </View>
       <View style={styles.footer}>
-        <Text style={styles.text}>Giá{'\n'}{item.price} VND</Text>
-        <TouchableOpacity style={[styles.footerButton, styles.buyNowButton]}>
-          <Text style={styles.buyNowText}>Mua ngay</Text>
+        <Text style={styles.text}>
+          Giá{"\n"}
+          {item.price} VND
+        </Text>
+        <TouchableOpacity style={[styles.footerButton, styles.buyNowButton]} onPress={AddItem}>
+          <Text style={styles.buyNowText} >
+            Mua ngay
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -20,6 +20,13 @@
       "email": "admin4@gmail.com",
       "phoneNumber": "0333556208",
       "password": "admin2"
+    },
+    {
+      "id": "f5ce",
+      "username": "aa",
+      "email": "admin@gmail.com",
+      "phoneNumber": "0333556204",
+      "password": "admin"
     }
   ],
   "products": [
@@ -84,7 +91,7 @@
       "image": "https://i.imgur.com/M5XdFbR.png",
       "description": "Củ cà rốt là một loại rau củ giàu vitamin A, beta-carotene và chất chống oxy hóa. Cà rốt có thể ăn sống, nấu chín, xào, luộc, nướng hay làm salad. Cà rốt cũng có thể làm thành nước ép, súp hay bánh ngọt. Cà rốt có nhiều màu sắc khác nhau, từ vàng, cam, đỏ cho đến tím. Cà rốt có hương vị ngọt và giòn, rất hấp dẫn và bổ dưỡng. Hãy mua củ cà rốt ngay hôm nay tại trang web của chúng tôi để nhận được ưu đãi hấp dẫn và giao hàng nhanh chóng!",
       "categories": "Rau Củ",
-      "liked": false
+      "liked": true
     },
     {
       "id": "8",
@@ -120,7 +127,7 @@
       "image": "https://i.imgur.com/2ndCW0z.jpg",
       "description": "Thịt gà là một loại thực phẩm phổ biến và ngon miệng, có nhiều cách chế biến khác nhau. Bạn có thể nướng, chiên, hấp, xào, om, kho, nấu canh hoặc làm salad với thịt gà. Thịt gà có chứa nhiều protein, vitamin và khoáng chất, tốt cho sức khỏe và sắc đẹp. Hãy đặt mua thịt gà tươi ngon và sạch sẽ từ app bán hàng của chúng tôi ngay hôm nay để thưởng thức những món ăn hấp dẫn và bổ dưỡng!",
       "categories": "Thịt",
-      "liked": false
+      "liked": true
     },
     {
       "id": "12",
@@ -188,29 +195,14 @@
   ],
   "carts": [
     {
-      "id": "1",
-      "idProduct": "18",
-      "quantity": 1
-    },
-    {
-      "id": "2",
-      "idProduct": "12",
-      "quantity": 1
-    },
-    {
-      "id": "3",
+      "quantity": 2,
       "idProduct": "10",
-      "quantity": 1
+      "id": "9d0b"
     },
     {
-      "id": "4",
-      "idProduct": "6",
-      "quantity": 1
-    },
-    {
-      "id": "5",
-      "idProduct": "7",
-      "quantity": 1
+      "quantity": 2,
+      "idProduct": "3",
+      "id": "d6ff"
     }
   ],
   "orders": [],

@@ -15,27 +15,27 @@ const ShoppingCart = () => {
 
   useEffect(() => {
     fetchCartItems();
-  }, []);
+  }, [cartItems]);
 
   const fetchProductDetail = async (productId) => {
-    const url = `http://192.168.1.103:3000/products/${productId}`;
+    const url = `http://10.24.30.213:3000/products/${productId}`;
     try {
       const response = await fetch(url);
       const productDetail = await response.json();
       return productDetail;
     } catch (error) {
-      console.error("Error fetching product details: ", error);
+      console.error("Lỗi lấy chi tiết sản phẩm ", error);
       return null;
     }
   };
   const fetchCartItems = async () => {
     try {
-      const response = await fetch("http://192.168.1.103:3000/carts");
+      const response = await fetch("http://10.24.30.213:3000/carts");
       const data = await response.json();
       setCartItems(data);
       fetchProductDetails();
     } catch (error) {
-      console.error("Error fetching cart items:", error);
+      console.error("Lỗi lấy sản phẩm trong giỏ hàng", error);
     }
   };
 
@@ -61,7 +61,19 @@ const ShoppingCart = () => {
   };
 
   const removeItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
+    let url_api_del = "http://10.24.30.213:3000/carts/" + id;
+    fetch(url_api_del, {
+      method: "DELETE",
+    })
+      .then((result) => {
+        if (result.status == 200) {
+          alert("Xóa thành công");
+  
+        }
+      })
+      .catch((ex) => {
+        console.log(ex);
+      });
   };
 
   const renderItem = ({ item }) => {
@@ -79,7 +91,7 @@ const ShoppingCart = () => {
         <Image source={{ uri: product.image }} style={styles.image} />
         <View style={styles.itemInfo}>
           <Text>{product.name}</Text>
-          <Text>${product.price}</Text>
+          <Text>{product.price} VND</Text>
           <View style={styles.quantityContainer}>
             <TouchableOpacity
               onPress={() => updateQuantity(item.id, item.quantity - 1)}
@@ -101,15 +113,44 @@ const ShoppingCart = () => {
     );
   };
 
-  const updateQuantity = (id, quantity) => {
+  const updateQuantity = (id, newQuantity) => {
+    const quantity = newQuantity > 0 ? newQuantity : 1;
     const updatedItems = cartItems.map((item) => {
       if (item.id === id) {
-        return { ...item, quantity: quantity > 0 ? quantity : 1 };
+        return { ...item, quantity };
       }
       return item;
     });
     setCartItems(updatedItems);
+    const itemToUpdate = cartItems.find((item) => item.id === id);
+    if (!itemToUpdate) {
+      console.error("Item not found in cart");
+      return;
+    }
+    const url_api = `http://10.24.30.213:3000/carts/${id}`;
+    fetch(url_api, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+        idProduct: itemToUpdate.idProduct,
+      }),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          alert("Quantity updated successfully");
+        } else {
+          throw new Error("Failed to update quantity");
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating quantity:", error);
+        fetchCartItems();
+      });
   };
+  
 
   return (
     <View style={styles.container}>
@@ -123,7 +164,7 @@ const ShoppingCart = () => {
         style={styles.list}
       />
       <View style={styles.summary}>
-        <Text>Total: ${calculateTotal()}</Text>
+        <Text>Total: {calculateTotal()} VND</Text>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Checkout</Text>
         </TouchableOpacity>
@@ -131,7 +172,7 @@ const ShoppingCart = () => {
           style={styles.button}
           onPress={() => setCartItems([])}
         >
-          <Text style={styles.buttonText}>Clear Cart</Text>
+          <Text style={styles.buttonText}>Xóa Trắng</Text>
         </TouchableOpacity>
       </View>
     </View>
