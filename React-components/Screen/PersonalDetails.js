@@ -63,7 +63,7 @@ const PersonalDetails = (props) => {
       return;
     }
   
-    let url_api = `http://192.168.1.103:3000/users/${userInfo.id}`;
+    let url_api = `http://10.24.26.236:3000/users/${userInfo.id}`;
     fetch(url_api, {
       method: "PUT",
       headers: {

@@ -13,7 +13,7 @@ const ProductDetails = ({ route }) => {
   const { item } = route.params;
   const [cartItems, setCartItems] = useState([]);
   const Move = useNavigation();
-  const url_api = "http://10.24.30.213:3000/carts";
+  const url_api = "http://10.24.26.236:3000/carts";
 
   const AddItem = async () => {
     const isItemInCart = cartItems.some(

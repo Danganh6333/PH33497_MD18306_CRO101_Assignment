@@ -11,7 +11,7 @@ const Favourites = () => {
   
   useEffect(() => {
     const getListFruit = async () => {
-      let url_api = "http://10.24.30.213:3000/products";
+      let url_api = "http://10.24.26.236:3000/products";
       try {
         const response = await fetch(url_api);
         const json = await response.json();
