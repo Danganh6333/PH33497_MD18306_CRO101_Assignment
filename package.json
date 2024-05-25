@@ -5,7 +5,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "server": "json-server --host 10.24.26.236 --port 3000 --watch Database/Data/PH33497_ass.json",
+    "server": "json-server --host 10.24.52.119 --port 3000 --watch Database/Data/PH33497_ass.json",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },

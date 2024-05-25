@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import { FontAwesome5 as Icon } from "@expo/vector-icons";
+import ipv from "../../COMMON";
 
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -18,7 +19,7 @@ const ShoppingCart = () => {
   }, [cartItems]);
 
   const fetchProductDetail = async (productId) => {
-    const url = `http://10.24.26.236:3000/products/${productId}`;
+    const url = `http://${ipv}:3000/products/${productId}`;
     try {
       const response = await fetch(url);
       const productDetail = await response.json();
@@ -30,7 +31,7 @@ const ShoppingCart = () => {
   };
   const fetchCartItems = async () => {
     try {
-      const response = await fetch("http://10.24.26.236:3000/carts");
+      const response = await fetch(`http://${ipv}:3000/carts`);
       const data = await response.json();
       setCartItems(data);
       fetchProductDetails();
@@ -61,7 +62,7 @@ const ShoppingCart = () => {
   };
 
   const removeItem = (id) => {
-    let url_api_del = "http://10.24.26.236:3000/carts/" + id;
+    let url_api_del = `http://${ipv}:3000/carts/` + id;
     fetch(url_api_del, {
       method: "DELETE",
     })
@@ -127,7 +128,7 @@ const ShoppingCart = () => {
       console.error("Item not found in cart");
       return;
     }
-    const url_api = `http://10.24.26.236:3000/carts/${id}`;
+    const url_api = `http://${ipv}:3000/carts/${id}`;
     fetch(url_api, {
       method: "PUT",
       headers: {

@@ -6,6 +6,7 @@ import CustomButton2 from "../Button/CustomButton2.js";
 import CustomCheckbox from "../Others/CustomCheckbox.js";
 import Toast from "react-native-toast-message";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import ipv from "../../COMMON.js";
 
 const SignIn = (props) => {
   const {navigation} = props;
@@ -25,7 +26,7 @@ const SignIn = (props) => {
       return;
     }
     try {
-      let url_api = "http://10.24.30.213:3000/users?email=" + email;
+      let url_api = `http://${ipv}:3000/users?email=` + email;
       const response = await fetch(url_api);
       const res_login = await response.json();
       if (res_login.length !== 1) {

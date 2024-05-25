@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   FlatList,
   TouchableOpacity,
@@ -10,6 +10,7 @@ import {
 import Icon from "@expo/vector-icons/AntDesign";
 import Toast from "react-native-toast-message";
 import { useNavigation } from "@react-navigation/native";
+import ipv from "../../COMMON";
 
 const TopNavigation = (props) => {
   const Categories = ["Trái Cây", "Rau Củ", "Thịt"];
@@ -20,7 +21,7 @@ const TopNavigation = (props) => {
   const navigation = useNavigation();
   const [filteredData, setFilteredData] = useState(FruitList);
   const getListFruit = async () => {
-    let url_api = "http://10.24.30.213:3000/products";
+    let url_api = `http://${ipv}:3000/products`;
     try {
       const response = await fetch(url_api);
       const json = await response.json();
@@ -51,7 +52,7 @@ const TopNavigation = (props) => {
     setLikedItems(initialLikedItems);
   }, [FruitList]);
 
-  const toggleLiked = (itemId) => {
+  const toggleLiked = useContext((itemId) => {
     const item = FruitList.find((item) => item.id === itemId);
 
     if (!item) {
@@ -65,7 +66,7 @@ const TopNavigation = (props) => {
 
     const updatedProduct = { ...item, liked: !likedItems[itemId] };
 
-    let url_api = `http://10.24.30.213:3000/products/${itemId}`;
+    let url_api = `http://${ipv}:3000/products/${itemId}`;
     fetch(url_api, {
       method: "PUT",
       headers: {
@@ -80,7 +81,7 @@ const TopNavigation = (props) => {
             text1: "Thông báo",
             text2: "Cập nhật thành công",
           });
-          fetch("http://10.24.30.213:3000/products")
+          fetch(`http://${ipv}:3000/products`)
             .then((rep) => rep.json())
             .then((data) => {
               setFruitList(data);
@@ -91,7 +92,7 @@ const TopNavigation = (props) => {
       .catch((error) => {
         console.error("Lỗi cập nhật thích :", error);
       });
-  };
+  });
 
   useEffect(() => {
     filterItemsByCategory(Categories[categoryIndex]);

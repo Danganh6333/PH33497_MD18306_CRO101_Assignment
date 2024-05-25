@@ -89,6 +89,16 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="BottomTabNavigator"
+        component={BottomTabNavigator}
+        style={{ position: "absolute" }}
+        options={{
+          headerLeft: () => renderHeaderLeft(),
+          headerRight: () => renderHeaderRight(),
+          title: null,
+        }}
+      />
+      <Stack.Screen
         name="Hello"
         component={Hello}
         options={{ headerShown: false }}
@@ -103,16 +113,7 @@ const StackNavigator = () => {
         component={SignUp}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="BottomTabNavigator"
-        component={BottomTabNavigator}
-        style={{ position: "absolute" }}
-        options={{
-          headerLeft: () => renderHeaderLeft(),
-          headerRight: () => renderHeaderRight(),
-          title: null,
-        }}
-      />
+      
       <Stack.Screen
         name="HomePage"
         component={HomePage}

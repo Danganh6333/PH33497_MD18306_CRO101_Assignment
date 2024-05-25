@@ -8,12 +8,13 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome5 as Icon } from "@expo/vector-icons";
+import ipv from "../../COMMON";
 
 const ProductDetails = ({ route }) => {
   const { item } = route.params;
   const [cartItems, setCartItems] = useState([]);
   const Move = useNavigation();
-  const url_api = "http://10.24.26.236:3000/carts";
+  const url_api = `http://${ipv}:3000/carts`;
 
   const AddItem = async () => {
     const isItemInCart = cartItems.some(

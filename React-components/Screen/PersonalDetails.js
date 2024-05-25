@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import CustomButton2 from "../Button/CustomButton2";
+import ipv from "../../COMMON";
 
 const PersonalDetails = (props) => {
   const {navigation} = props;
@@ -63,7 +64,7 @@ const PersonalDetails = (props) => {
       return;
     }
   
-    let url_api = `http://10.24.26.236:3000/users/${userInfo.id}`;
+    let url_api = `http://${ipv}:3000/users/${userInfo.id}`;
     fetch(url_api, {
       method: "PUT",
       headers: {

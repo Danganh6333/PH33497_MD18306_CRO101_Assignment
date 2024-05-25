@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, TextInput, Alert, Image } from "react-native";
 import Logo from "../Others/LogoDisplay.js";
 import CustomButton from "../Button/CustomButton1.js";
 import isEmail from "validator/lib/isEmail";
+import ipv from "../../COMMON.js";
 
 const SignUp = (props) => {
   const { navigation } = props;
@@ -12,7 +13,7 @@ const SignUp = (props) => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const DangKy = async () => {
-    let url_api = "http://10.24.30.213:3000/users";
+    let url_api = `http://${ipv}:3000/users`;
     if (rePassword !== password) {
       alert("Hai ô mật khẩu phải trùng nhau");
       return;

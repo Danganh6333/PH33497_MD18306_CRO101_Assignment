@@ -2,6 +2,7 @@ import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 import React, { useState, useEffect } from "react";
 import SearchBox from "../Others/SearchBox";
 import { useNavigation } from "@react-navigation/native";
+import ipv from "../../COMMON";
 
 
 const Favourites = () => {
@@ -11,7 +12,7 @@ const Favourites = () => {
   
   useEffect(() => {
     const getListFruit = async () => {
-      let url_api = "http://10.24.26.236:3000/products";
+      let url_api = `http://${ipv}:3000/products`;
       try {
         const response = await fetch(url_api);
         const json = await response.json();
